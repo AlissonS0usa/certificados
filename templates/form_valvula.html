@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado Válvula</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+   
+</head>
+<style>
+    #drop-area {
+    border: 2px dashed #007bff;
+    padding: 30px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+    #drop-area.hover {
+        background: #e2e6ea;
+    }
+</style>
+
+<body class="container mt-5">
+    <div style="padding-bottom:15px ;">
+        <a  href="/" class="btn btn-secondary" style="display: inline-block; margin-right: 20%;">Voltar</a>
+        <h2 style="display: inline-block;">Insira as informações da válvula abaixo:</h2>
+    </div>
+    <form  action="/gerar_psv_pdf" method="POST" enctype="multipart/form-data" style="border-top: 10px;">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="form-label">Data de Início:</label>
+                <input type="date" name="data_inicio" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Data da Próxima Calibração:</label>
+                <input type="date" name="data_proxima" class="form-control" required>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-6">
+                <label class="form-label">Tag da Válvula:</label>
+                <input type="text" name="tag_valvula" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Fabricante:</label>
+                <input type="text" name="fabricante" class="form-control" required>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-6">
+                <label class="form-label">Modelo da Válvula:</label>
+                <input type="text" name="modelo_valvula" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Diâmetro da Válvula:</label>
+                <input type="text" name="diametro_valvula" class="form-control" required>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 15px;">
+            <div class="col-md-6">
+                <label class="form-label">Pressão de Abertura:</label>
+                <input type="text" name="pressao_abertura" class="form-control" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Pressão de Fechamento:</label>
+                <input type="text" name="pressao_fechamento" class="form-control" required>
+            </div>
+        </div>
+        <div class="my-3">
+            <label class="form-label">Fluido de Teste:</label>
+            <input type="text" name="fluido_teste" class="form-control" required>            
+        </div>
+        <div class="mb-3">
+            <label for="unidade_pressao" class="form-label">Unidade de Pressão:</label>
+            <select id="unidade_pressao" name="unidade_pressao" class="form-select">
+                <option value="kgf/cm²">kgf/cm²</option>
+                <option value="Bar">Bar</option>
+                <option value="PSI">PSI</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Foto da Válvula:</label>
+            <input type="file" name="foto_valvula" class="form-control" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Gerar PDF</button>
+    </form>
+
+    
+</body>
+</html>
