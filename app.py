@@ -9,9 +9,9 @@ from reportlab.platypus import Table, TableStyle, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from datetime import datetime
 from werkzeug.utils import secure_filename
-from reportlab.lib.utils import ImageReader
 from PIL import Image as PilImage
 import random
+
 
 
 
