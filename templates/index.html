@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>Sistema de Certificados</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container text-center mt-5">
-        <h1 class="mb-4">Sistema de Certificados</h1>
-        <p>Escolha o tipo de certificado que deseja gerar:</p>
-        
-        <a href="/form_valvula" class="btn btn-primary btn-lg m-2">Certificado de Válvula</a>
-        <a href="/form_manometro" class="btn btn-success btn-lg m-2">Certificado de Manômetro</a>
+
+<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
+    <div class="container text-center p-4 bg-white shadow rounded">
+        <h1 class="mb-3 text-primary">Sistema de Certificados</h1>
+        <p class="lead text-secondary">Escolha o tipo de certificado que deseja gerar:</p>
+
+        <div class="mt-4">
+            <a href="/form_valvula" class="btn btn-primary btn-lg px-4 mx-2">Certificado de Válvula</a>
+            <a href="/form_manometro" class="btn btn-success btn-lg px-4 mx-2">Certificado de Manômetro</a>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
