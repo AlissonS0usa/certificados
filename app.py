@@ -134,7 +134,8 @@ def gerar_pdf_manometro():
         unidade_pressao = request.form["unidade_pressao"]
         fluido = request.form["fluido_teste"]
         diametro = request.form["diametro_rosca"]
-        resultado = request.form["resultado"]   
+        resultado = request.form["resultado"] 
+        num_certificado = request.form["num_cert_pi"]  
 
         if request.method == "POST":
             if 'foto_manometro' not in request.files:
@@ -194,7 +195,7 @@ def gerar_pdf_manometro():
         # Cabeçalho do certificado
         titulo = Paragraph("<b>CERTIFICADO DE CALIBRAÇÃO / AFERIÇÃO</b>", estilo_texto)
         dados_tabela1 = [
-            [titulo, Paragraph("<b>CERT.M DCE<br/>2025-68</b>", estilo_texto)],
+            [titulo, f"CERT.M DCE: 2025-{num_certificado}"],
             ["Data de emissão",f"{data_inicio_formatada}"],
             ["Data de validade", f"{data_final_formatada}"],
         ]
@@ -399,6 +400,7 @@ def gerar_psv_pdf():
         pressao_fechamento = request.form["pressao_fechamento"]
         unidade_pressao = request.form["unidade_pressao"]
         fabricante = request.form["fabricante"]
+        num_certificado = request.form["num_cert_psv"]
 
         #Salva a imagem temporariamente
         
@@ -464,7 +466,7 @@ def gerar_psv_pdf():
     
         # Tabela principal com as informações do certificado
         tabela_certificado = [
-            [titulo],
+            [titulo, f"CERTIFICADO Nº: 2025-{num_certificado}"],
             [f"DATA: {data_incio_formatada}", f"CERTIFICADO Nº: PSV-{tag_valvula}"],
             ["CARACTERÍSTICAS TÉCNICAS", "DADOS DO EQUIPAMENTO PROTEGIDO"],
     
