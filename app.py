@@ -195,15 +195,14 @@ def gerar_pdf_manometro():
         # Cabeçalho do certificado
         titulo = Paragraph("<b>CERTIFICADO DE CALIBRAÇÃO / AFERIÇÃO</b>", estilo_texto)
         dados_tabela1 = [
-            [titulo, f"CERT.M DCE: 2025-{num_certificado}"],
+            [titulo, f"CERT.M DCE: PI-2025-{num_certificado}"],
             ["Data de emissão",f"{data_inicio_formatada}"],
             ["Data de validade", f"{data_final_formatada}"],
         ]
         
         estilo_tabela1 = TableStyle([
             ("ALIGN", (1, 0), (1, 2), "CENTER"),
-            ("ALIGN", (0, 1), (0, 2), "LEFT"),
-            ("SPAN", (0, 0), (1, 0)),
+            ("ALIGN", (0, 1), (0, 2), "LEFT"),            
             ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
             ("FONTSIZE", (0, 0), (-1, -1), 12),
             ("BOTTOMPADDING", (0, 0), (1, 0), 6),
@@ -466,8 +465,8 @@ def gerar_psv_pdf():
     
         # Tabela principal com as informações do certificado
         tabela_certificado = [
-            [titulo, f"CERTIFICADO Nº: 2025-{num_certificado}"],
-            [f"DATA: {data_incio_formatada}", f"CERTIFICADO Nº: PSV-{tag_valvula}"],
+            [titulo],
+            [f"DATA: {data_incio_formatada}", f"CERTIFICADO Nº: PSV-2025-{num_certificado}"],
             ["CARACTERÍSTICAS TÉCNICAS", "DADOS DO EQUIPAMENTO PROTEGIDO"],
     
         ]
