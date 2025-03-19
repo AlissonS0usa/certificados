@@ -195,7 +195,7 @@ def gerar_pdf_manometro():
         # Cabeçalho do certificado
         titulo = Paragraph("<b>CERTIFICADO DE CALIBRAÇÃO / AFERIÇÃO</b>", estilo_texto)
         dados_tabela1 = [
-            [titulo, f"CERT.M DCE: PI-2025-{num_certificado}"],
+            [titulo, f"CERT DCE: PI-2025-{num_certificado}"],
             ["Data de emissão",f"{data_inicio_formatada}"],
             ["Data de validade", f"{data_final_formatada}"],
         ]
@@ -204,6 +204,7 @@ def gerar_pdf_manometro():
             ("ALIGN", (1, 0), (1, 2), "CENTER"),
             ("ALIGN", (0, 1), (0, 2), "LEFT"),            
             ("FONTNAME", (0, 0), (-1, -1), "Helvetica"),
+            ("FONTNAME", (0, 1), (0, 1), "Helvetica-Bold"),
             ("FONTSIZE", (0, 0), (-1, -1), 12),
             ("BOTTOMPADDING", (0, 0), (1, 0), 6),
             ('VALIGN', (0, 0), (1, 0), 'MIDDLE'),
