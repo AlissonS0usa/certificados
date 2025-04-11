@@ -28,8 +28,8 @@ def gerar_valor_aleatorio(base):
         min_val = (base - 0.15) * 1000
         max_val = (base + 0.15) * 1000
     else:   
-        fator = random.uniform(0.97, 1.07)
-        return round(base * fator, 2)
+        min_val = (base - 0.5) * 1000
+        max_val = (base + 0.5) * 1000
     
  
     return round(random.randint(int(min_val), int(max_val)) / 1000, 2)
