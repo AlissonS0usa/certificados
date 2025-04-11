@@ -181,6 +181,10 @@ def gerar_pdf_manometro():
         data_inicio_formatada = datetime.strptime(data_inicio, "%Y-%m-%d").strftime("%d/%m/%Y")
         data_final_formatada = datetime.strptime(data_proxima, "%Y-%m-%d").strftime("%d/%m/%Y")
         
+        
+        if result == "REPROVADA":
+            data_final_formatada = "-"
+        
         # Cria um arquivo PDF na memória
         buffer = io.BytesIO()
         pdf = canvas.Canvas(buffer, pagesize=A4)
